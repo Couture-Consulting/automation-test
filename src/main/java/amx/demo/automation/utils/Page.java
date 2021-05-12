@@ -1,16 +1,15 @@
 package amx.demo.automation.utils;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import java.time.Duration;
+
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 
 public class Page {
 	
 	private Page() {}
 	
-	public static void openPage (String URL) {
-		WebDriverManager.chromedriver().setup();
-		WebDriver DRIVER = new ChromeDriver();
-		DRIVER.get(URL);
+	public static void waitForVisibility(SelenideElement element) {
+		element.shouldBe(Condition.visible, Duration.ofSeconds(30));
 	}
 }

@@ -49,4 +49,6 @@ Feature: Initial feature includes testing steps
 	Scenario: Open the browser
 		Given the page 'https://192.168.0.123:9443/ProcessCenter/' is opened
 		And I give username 'pnguyen' and password 'duyphuoc23122012'
+		And I choose the 'Phuoc Sandbox' application
+		And I start 'Testing CSHS' client side human service
 		And I close the browser
